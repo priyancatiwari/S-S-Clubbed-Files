@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> Shuffle And Sort</title>
+    <style>
+        :root {
+            --black: #000000;
+            --white:#FFFFFF;
+            --grey:#333333;
+            --cream_white:#EFEFEF;
+            --spary:#72C3DC;
+            --sea_green:#2BBEAD;
+            --juniper:#6F9898;
+            --silver:#BFBFBF;
+            --big_stone:#2F454E;
+        }
+        .sas_body
+        {
+            background-color: #e0e0e0;
+            font-family: Arial;
+        }
+
+        .sas_square {
+            height: 150px;
+            width: 50px;
+            text-align: center;
+        }
+
+        .sas_div1{
+            background-color:var(--black);
+            height: 40px;
+        }
+
+        .sas_div2_table{
+            /* max-width: 1000px; */
+            width: 100%;
+        }
+
+        .sas_bg1{
+            background-color: var(--juniper);
+        }
+        .sas_bg2{
+            background-color: var(--spary);
+        }
+        .sas_bg3{
+            background-color: var(--big_stone);
+        }
+        .sas_bg4{
+            background-color: var(--spary);
+        }
+        .sas_bg5{
+            background-color: var(--big_stone);
+        }
+        .sas_bg6{
+            background-color: var(--silver);
+        }
+        .sas_bg7{
+            background-color: var(--silver);
+        }
+        .sas_bg8{
+            background-color: var(--juniper);
+        }
+        .sas_bg9{
+            background-color: var(--big_stone);
+        }
+        .sas_div1_heading{
+            color: var(--cream_white);
+            padding-top: 10px;
+        }
+        .sas_black{
+            background-color: var(--black);
+        }
+        .sas_color{
+            color: var(--white);
+            font-size:40px;
+        }
+        .sas_div2_row{
+            display: flex;
+            margin-left:-5px;
+            margin-right:-5px;
+        }
+        .sas_flex1{
+            flex: 80%;
+            padding: 5px;
+        }
+        .sas_flex2{
+            flex: 20%;
+            padding: 5px;
+        }
+        .btn{
+            display: inline-block;
+            padding: 0.7em 1.4em;
+            margin: 0 0.3em 0.3em 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-weight: 400;
+            color: var(--white);
+            background-color: var(--spary);
+            box-shadow: 0px 2px var(--sea_green);
+            text-align: center;
+            position: relative;
+            width: 100%;
+            border: none;
+        }
+
+        .sas_responsiv_grid{
+            display: none;
+        }
+        
+
+        @media all and (max-width:375px){
+           
+            .sas_div2_row{
+                flex-wrap: wrap-reverse ;
+            }
+
+            .sas_responsiv_grid{
+                display: block;
+                flex: 100%;
+                padding: 5px;
+            }
+            .sas_flex1{
+                display: none;
+            }
+            .sas_div2_table {
+                max-width: 1200px;
+                 margin: 0 auto;
+                 display: grid;
+                 grid-gap: 1rem;
+            }
+           
+            .sas_flex2 table tr {
+                display:inline;
+            }
+            .sas_flex2{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sas_card{
+                background-color: var(--cream_white);
+                color: var(--black);
+                padding: 1rem;
+                height: 1rem;
+                text-align: center;
+            }
+            .cards {
+                display: grid;
+                grid-gap: 1rem;
+            }
+
+
+            .sas_div2_table_boarder{
+                border-style: solid;
+                border-bottom: none;
+                border-top: none;
+                border-right: none;
+                border-left-width: 10px;
+            }
+            .sas_div2_color1{
+                border-left-color: var(--juniper);
+            }
+            .sas_div2_color2{
+                border-left-color: var(--spary);
+            }
+            .sas_div2_color3{
+                border-left-color: var(--big_stone);
+            }
+
+            .sas_div2_color4{
+                border-left-color: var(--spary);
+            }
+            .sas_div2_color5{
+                border-left-color: var(--big_stone);
+            }
+            .sas_div2_color6{
+                border-left-color: var(--silver);
+            }
+            .sas_div2_color7{
+                border-left-color: var(--silver);
+            }
+            .sas_div2_color8{
+                border-left-color: var(--juniper);
+            }
+            .sas_div2_color9{
+                border-left-color: var(--big_stone);
+            }
+
+        }
+        
+    </style>
+</head>
+<body class="sas_body">
+    <div class="sas_div1">
+        <table class="pups_div1_table" align="center">
+            <tr>
+                <td class="sas_div1_heading">
+                    <span >Shuffle And Sort</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="sas_div2_row">
+        <div class="sas_flex1">
+            <table  class="sas_div2_table">
+                <tr>
+                    <td id="itm1" class="sas_square sas_bg1 sas_color"></td>
+                    <td id="itm2" class="sas_square sas_bg2 sas_color"></td>
+                    <td id="itm3" class="sas_square sas_bg3 sas_color"></td>
+                </tr>
+                <tr>
+                    <td id="itm4" class="sas_square sas_bg4 sas_color"></td>
+                    <td id="itm5" class="sas_square sas_bg5 sas_color"></td>
+                    <td id="itm6" class="sas_square sas_bg6 sas_color"></td>
+                </tr>
+                <tr>
+                    <td id="itm7" class="sas_square sas_bg7 sas_color"></td>
+                    <td id="itm8" class="sas_square sas_bg8 sas_color"></td>
+                    <td id="itm9" class="sas_square sas_bg9 sas_color"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="sas_responsiv_grid">
+            <div class="sas_div2_table">
+                <div id="card_id1" class="sas_card sas_div2_table_boarder sas_div2_color1"></div>
+                <div id="card_id2" class="sas_card sas_div2_table_boarder sas_div2_color2"></div>
+                <div id="card_id3" class="sas_card sas_div2_table_boarder sas_div2_color3"></div>
+                <div id="card_id4" class="sas_card sas_div2_table_boarder sas_div2_color4"></div>
+                <div id="card_id5" class="sas_card sas_div2_table_boarder sas_div2_color5"></div>
+                <div id="card_id6" class="sas_card sas_div2_table_boarder sas_div2_color6"></div>
+                <div id="card_id7" class="sas_card sas_div2_table_boarder sas_div2_color7"></div>
+                <div id="card_id8" class="sas_card sas_div2_table_boarder sas_div2_color8"></div>
+                <div id="card_id9" class="sas_card sas_div2_table_boarder sas_div2_color9"></div>
+            </div>
+        </div>
+        <div class="sas_flex2">
+            <table>
+                <tr>
+                    <td>
+                        <button class="btn" onclick="return mySort()">Sort</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn" onclick="return myShuffle()">Shuffle</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<script type="text/javascript"> 
+  
+  function myFunction(item) {
+    item.forEach(function (item, index) {
+        if(index == 0) {
+      document.getElementById("itm1").innerHTML = item;
+      document.getElementById("card_id1").innerHTML = item;
+     }
+      else if (index == 1) {
+        document.getElementById("itm2").innerHTML = item;
+        document.getElementById("card_id2").innerHTML = item;
+     }
+     else if (index == 2) {
+        document.getElementById("itm3").innerHTML = item;
+        document.getElementById("card_id3").innerHTML = item;
+     }
+     else if (index == 3) {
+        document.getElementById("itm4").innerHTML = item;
+        document.getElementById("card_id4").innerHTML = item;
+     }
+     else if (index == 4) {
+        document.getElementById("itm5").innerHTML = item;
+        document.getElementById("card_id5").innerHTML = item;
+     }
+     else if (index == 5) {
+        document.getElementById("itm6").innerHTML = item;
+        document.getElementById("card_id6").innerHTML = item;
+     }
+     else if (index == 6) {
+        document.getElementById("itm7").innerHTML = item;
+        document.getElementById("card_id7").innerHTML = item;
+     }
+     else if (index == 7) {
+        document.getElementById("itm8").innerHTML = item;
+        document.getElementById("card_id8").innerHTML = item;
+     }
+     else if (index == 8) {
+        document.getElementById("itm9").innerHTML = item;
+        document.getElementById("card_id9").innerHTML = item;
+     } 
+    });
+     
+  }
+
+  function initialload(param1) {
+      if(param1 == "sort"){
+        let items = [1,2,3,4,5,6,7,8,9] 
+        myFunction(items);
+      }else{
+        let items = generateNumber(0,10)
+        myFunction(items);
+      }
+  }
+
+  function generateNumber(min,max){
+    const newarray =[];
+      for(var i= 0; i<=9; i++){
+          newarray.push(Math.floor(Math.random() * (max - min)) + min);
+      }
+      return newarray;
+  }
+
+  function myShuffle(){
+    initialload("shuffle");
+  }
+
+  function mySort(){
+    initialload("sort");
+  }
+
+  initialload("sort");
+
+</script>
+</html>
